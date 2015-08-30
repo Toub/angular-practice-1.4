@@ -1,0 +1,38 @@
+data:
+  container_name: tb_tpa_data
+  image: cogniteev/echo
+  command: echo 'Data only container'
+  volumes:
+  # mount base directory as /app/src
+    - ../..:/app/src
+     
+npmproxy:
+  container_name: tb_tpa_npmproxy
+  image: toubiweb/npm-proxy
+  volumes:
+  # mount base directory as /app/src
+    - ../cache/npm:/app/npm-cache
+      
+bowerproxy:
+  container_name: tb_tpa_bowerproxy
+  hostname: bowerproxy
+  image: toubiweb/bower-proxy
+  volumes:
+  # mount base dilrectory as /app/src
+    - ../cache/bower:/app/bower-cache
+    #- /somewhere/bower-proxy.config.json:/app/bower-proxy.config.json
+    
+app:
+  container_name: tb_tpa_app
+  hostname: tp
+  image: toubiweb/angular-practice-1.4-dev
+  command: tail -f /dev/null
+  links:
+    - npmproxy
+    - bowerproxy
+  volumes_from:
+    - data
+  ports:
+    - 3000:3000
+    - 3001:3001
+    - 35729:35729

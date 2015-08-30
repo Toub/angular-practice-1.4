@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" ng-app="curriculoom">
+<!-- chargement de l'application angular "curriculoom" -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>Curriculoom</title>
+    <meta name="description" content="Online curriculum vitae">
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+    <div class="main-area">
+
+        <header class="header-area"></header>
+
+        <div class="body-area" ng-controller="EditUserController">
+
+            <div>
+                <label>Entrez votre prénom</label>
+                <div>
+                    <input type="text" ng-model="firstName">
+                </div>
+            </div>
+
+            <p ng-if="firstName">Bonjour {{ firstName }}!</p>
+
+        </div>
+
+        <footer class="footer-area"></footer>
+
+    </div>
+
+    <!-- dépendance Angular -->
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+
+    <!-- votre application -->
+    <script type="text/javascript" src="app.js"></script>
+
+</body>
+
+</html>
