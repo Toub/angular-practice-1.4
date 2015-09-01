@@ -46,7 +46,7 @@ Note: ~ représente votre répertoire personnel, par exemple C:/Users/toto
 
 Depuis le répertoire angular-practice-1.4 (dans lequel se trouve le fichier de configuration npm_lazy_config.js):
 
-    npm_lazy --config ./npm_lazy_config.js
+    npm_lazy --config C:\angular-practice-1.4\npm_lazy_config.js
     
 Le serveur démarre alors sur le port 8077.
 
