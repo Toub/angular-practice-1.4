@@ -8,12 +8,15 @@
 
     function TpaProfileUserEditController($scope, $log) {
 
+        // view model
+        var vm = this;
+
         // public attributes
-        $scope.user;
+        vm.user;
 
         // public methods
-        $scope.getFullName = getFullName;
-        $scope.reset = reset;
+        vm.getFullName = getFullName;
+        vm.reset = reset;
 
         // initialization
         init();
@@ -31,11 +34,11 @@
         }
 
         function getFullName() {
-            return $scope.user.firstName + ' ' + $scope.user.lastName;
+            return vm.user.firstName + ' ' + vm.user.lastName;
         }
         
         function reset(){
-            $scope.user = {
+            vm.user = {
                 firstName: 'John',
                 lastName: 'Smith'
             };
