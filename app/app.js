@@ -9,13 +9,11 @@
     function TpaProfileUserEditController($scope, $log) {
 
         // public attributes
-        $scope.user = {
-            firstName: 'John',
-            lastName: 'Smith'
-        };
+        $scope.user;
 
         // public methods
         $scope.getFullName = getFullName;
+        $scope.reset = reset;
 
         // initialization
         init();
@@ -23,6 +21,8 @@
         function init() {
             $log.info('Initializing controller...');
 
+            reset();
+            
             $scope.$on('$destroy', onDestroy);
         }
 
@@ -31,7 +31,14 @@
         }
 
         function getFullName() {
-            return $scope.user.firstName + $scope.user.lastName;
+            return $scope.user.firstName + ' ' + $scope.user.lastName;
+        }
+        
+        function reset(){
+            $scope.user = {
+                firstName: 'John',
+                lastName: 'Smith'
+            };
         }
 
     }
