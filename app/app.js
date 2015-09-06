@@ -10,23 +10,30 @@
 
         // public attributes
         $scope.user = {
-            firstName: 'John'
+            firstName: 'John',
+            lastName: 'Smith'
         };
 
         // public methods
         $scope.getFullName = getFullName;
-        
+
         // initialization
         init();
 
         function init() {
             $log.info('Initializing controller...');
+
+            $scope.$on('$destroy', onDestroy);
         }
-        
-        function getFullName(){
-            // TODO
+
+        function onDestroy() {
+            $log.info('Releasing resources...');
         }
-        
+
+        function getFullName() {
+            return $scope.user.firstName + $scope.user.lastName;
+        }
+
     }
 
 

@@ -25,8 +25,14 @@
                     <input type="text" ng-model="user.firstName">
                 </div>
             </div>
+            <div>
+                <label>Entrez votre nom</label>
+                <div>
+                    <input type="text" ng-model="user.lastName">
+                </div>
+            </div>
 
-            <p ng-if="user.firstName">Bonjour {{ user.firstName }}!</p>
+            <p ng-if="user.getFullName()">Bonjour {{ user.getFullName() }}!</p>
 
         </div>
 
