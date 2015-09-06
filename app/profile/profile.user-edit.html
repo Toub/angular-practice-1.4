@@ -1,20 +1,42 @@
-<div class="user-edit-area" ng-controller="TpaProfileUserEditController as userVm">
+<div class="container user-edit-area" ng-controller="TpaProfileUserEditController as userVm">
+    <div class="page">
+        <div class="row">
 
-    <div>
-        <label>Entrez votre prénom</label>
-        <div>
-            <input type="text" ng-model="userVm.user.firstName">
+            <div class="col-md-8">
+                <h1>Edit user profile</h1>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group required">
+                            <label class="control-label">First name</label>
+                            <input name="firstName" required class="form-control" type="text" ng-model="userVm.user.firstName">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group required">
+                            <label class="control-label">Last name</label>
+                            <input name="lastName" required class="form-control" type="text" ng-model="userVm.user.lastName">
+                        </div>
+                    </div>
+                </div>
+               
+                <div><input class="btn btn-primary" type="button" value="Reset" ng-click="userVm.reset()"></div>
+            </div>
+              
+            <div class="col-md-4">
+                <h1>Profile preview</h1>
+
+                <table class="table table-striped table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ userVm.getFullName() }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
-    </div>
-    <div>
-        <label>Entrez votre nom</label>
-        <div>
-            <input type="text" ng-model="userVm.user.lastName">
-        </div>
-    </div>
 
-    <p ng-if="userVm.getFullName()">Bonjour {{ userVm.getFullName() }}!</p>
-
-    <div><input type="button" value="Reset" ng-click="userVm.reset()"></div>
+    </div>
 
 </div>
