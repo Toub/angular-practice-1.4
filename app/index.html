@@ -17,25 +17,8 @@
 
         <header class="header-area"></header>
 
-        <div class="body-area" ng-controller="TpaProfileUserEditController as userVm">
-
-            <div>
-                <label>Entrez votre prénom</label>
-                <div>
-                    <input type="text" ng-model="userVm.user.firstName">
-                </div>
-            </div>
-            <div>
-                <label>Entrez votre nom</label>
-                <div>
-                    <input type="text" ng-model="userVm.user.lastName">
-                </div>
-            </div>
-
-            <p ng-if="userVm.getFullName()">Bonjour {{ userVm.getFullName() }}!</p>
-            
-            <div><input type="button" value="Reset" ng-click="userVm.reset()"></div>
-
+        <div class="body-area">
+            <div ng-include="'/profile/profile.user-edit.html'"></div>
         </div>
 
         <footer class="footer-area"></footer>
@@ -47,6 +30,8 @@
 
     <!-- votre application -->
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="profile/profile.js"></script>
+    <script type="text/javascript" src="profile/profile.user-edit.ctrl.js"></script>
 
 </body>
 
