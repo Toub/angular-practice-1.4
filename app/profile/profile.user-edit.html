@@ -74,7 +74,8 @@
                     <tbody>
                         <tr>
                             <th>Name</th>
-                            <td>{{ userVm.getFullName() }}</td>
+                            <td ng-class="'gender-' + userVm.user.gender">{{ userVm.getFullName() }}</td>
+                            <!-- or: ng-class="{ 'gender-male': userVm.user.gender === 'male',  'gender-female': userVm.user.gender === 'female' }">-->
                         </tr>
                         <tr>
                             <th>Email</th>

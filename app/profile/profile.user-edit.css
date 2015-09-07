@@ -2,6 +2,14 @@
     color: #456872;
 }
 
+.profile-user-edit .gender-male{
+    color: #0089ff;
+}
+
+.profile-user-edit .gender-female{
+    color: #ff0093;
+}
+
 .btn.large {
   padding: 14px 24px;
   border: 0 none;
