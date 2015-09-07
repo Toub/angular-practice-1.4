@@ -49,10 +49,10 @@
                         <div class="col-md-2">
                             <div class="form-group employed-form-group">
                                 <label class="control-label">Employed</label>
-                                <input class="form-control" type="checkbox" ng-model="userVm.user.employed">
+                                <input class="form-control" type="checkbox" ng-model="userVm.user.employed" ng-change="userVm.employedUpdated()">
                             </div>
                         </div>
-                        <div class="col-md-2" ng-if="userVm.user.employed">
+                        <div class="col-md-2" ng-show="userVm.user.employed">
                             <div class="form-group">
                                 <label class="control-label">Salary</label>
                                 <input name="salary" class="form-control" type="number" ng-model="userVm.user.salary">

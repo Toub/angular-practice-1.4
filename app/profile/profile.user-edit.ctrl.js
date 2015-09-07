@@ -17,6 +17,7 @@
         vm.getFullName = getFullName;
         vm.reset = reset;
         vm.getAgeInYears = getAgeInYears;
+        vm.employedUpdated = employedUpdated;
 
         // initialization
         init();
@@ -58,6 +59,12 @@
                 return years;
             } else {
                 return null;
+            }
+        }
+        
+        function employedUpdated(){
+            if (!vm.user.employed) {
+                vm.user.salary = null;
             }
         }
 
