@@ -11,7 +11,7 @@
             .state('edit-user', {
                 url: "/profile/user/edit",
                 templateUrl: 'profile/profile.user-edit.html',
-                controller: 'TpaProfileUserEditController'
+                controller: 'TpaProfileUserEditController as userVm'
             });
 
         // default route
