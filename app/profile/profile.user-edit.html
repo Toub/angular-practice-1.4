@@ -12,13 +12,18 @@
                 <form name="userForm" novalidate>
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label class="control-label">First name</label>
-                                <input name="firstName" class="form-control" type="text" ng-model="userVm.user.firstName">
+                                <input name="firstName" required minlength="2" class="form-control" type="text" ng-model="userVm.user.firstName">
+                                <!-- using attribute directives -->
+                                <div ng-messages="userForm.firstName.$error" role="alert" class="error">
+                                  <div ng-message="required">First name is required.</div>
+                                  <div ng-message="minlength">First name should contains at least 2 characters.</div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label class="control-label">Last name</label>
                                 <input name="lastName" class="form-control" type="text" ng-model="userVm.user.lastName">
                             </div>

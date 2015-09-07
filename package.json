@@ -1,20 +1,19 @@
 {
-    "name": "users-manager",
-    "version": "1.0.0",
-    "description": "## About this repository",
-    "repository": {
-        "type": "https",
-        "url": "https://github.com/Toub/angular-practice-1.4.git"
-    },
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "MIT",
-    "devDependencies": {
-        "gulp": "^3.9.0",
-        "gulp-connect": "^2.2.0"
-    },
-    "dependencies": {}
+  "name": "users-manager",
+  "version": "1.0.0",
+  "description": "## About this repository",
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/Toub/angular-practice-1.4.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0"
+  }
 }

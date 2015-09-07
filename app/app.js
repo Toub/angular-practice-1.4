@@ -2,6 +2,6 @@
 
     'use strict';
 
-    angular.module('tpAngular', ['tpAngular.profile', 'mgcrea.ngStrap']);
+    angular.module('tpAngular', ['tpAngular.profile', 'mgcrea.ngStrap', 'ngMessages']);
 
 })();
