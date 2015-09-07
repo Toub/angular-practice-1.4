@@ -16,7 +16,7 @@
                                 <label class="control-label">First name</label>
                                 <input name="firstName" required minlength="2" class="form-control" type="text" ng-model="userVm.user.firstName">
                                 <!-- using attribute directives -->
-                                <div ng-messages="userForm.firstName.$error" role="alert" class="error">
+                                <div ng-messages="userForm.firstName.$error" role="alert" class="error" ng-if="userForm.firstName.$touched || userForm.$submitted">
                                   <div ng-message="required">First name is required.</div>
                                   <div ng-message="minlength">First name should contains at least 2 characters.</div>
                                 </div>
@@ -25,13 +25,21 @@
                         <div class="col-md-4">
                             <div class="form-group required">
                                 <label class="control-label">Last name</label>
-                                <input name="lastName" class="form-control" type="text" ng-model="userVm.user.lastName">
+                                <input name="lastName" required minlength="3" class="form-control" type="text" ng-model="userVm.user.lastName">
+                                <div ng-messages="userForm.lastName.$error" role="alert" class="error" ng-if="userForm.lastName.$touched || userForm.$submitted">
+                                  <div ng-message="required">Last name is required.</div>
+                                  <div ng-message="minlength">Last name should contains at least 3 characters.</div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label class="control-label">Email</label>
-                                <input name="email" class="form-control" type="email" ng-model="userVm.user.email">
+                                <input name="email" required class="form-control" type="email" ng-model="userVm.user.email">
+                                <div ng-messages="userForm.email.$error" role="alert" class="error" ng-if="userForm.lastemailName.$touched || userForm.$submitted">
+                                  <div ng-message="required">Email is required.</div>
+                                  <div ng-message="email">Email is invalid.</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -48,7 +56,10 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Birthdate</label>
-                                <input name="birthdate" class="form-control" type="text" ng-model="userVm.user.birthdate" bs-datepicker data-date-format="yyyy-MM-dd" data-max-date="today" data-autoclose="1">
+                                <input name="birthdate" class="form-control" type="text" ng-model="userVm.user.birthdate" bs-datepicker data-date-format="yyyy-MM-dd" data-max-date="today" data-autoclose="1" ng-if="userForm.birthdate.$touched || userForm.$submitted">
+                                <div ng-messages="userForm.birthdate.$error" role="alert" class="error">
+                                  <div ng-message="date">Birthdate is invalid.</div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-2">
@@ -65,8 +76,15 @@
                         </div>
                     </div>
                     <div class="row text-center actions-bar">
+                        <div class="col-md-3 col-md-offset-3">
+                            <a ng-click="userForm.$setSubmitted()" class="btn btn-lg btn-ok large outline">
+                                <i class="glyphicon glyphicon-check"></i> Save
+                            </a>
+                        </div>
                         <div class="col-md-3">
-                            <button class="btn btn-lg btn-cancel large outline" ng-click="userVm.reset()">Reset</button>
+                            <a ng-click="userVm.reset();userForm.$setPristine();userForm.$setUntouched();" class="btn btn-lg btn-cancel large outline">
+                                <i class="glyphicon glyphicon-remove"></i> Reset
+                            </a>
                         </div>
                     </div>
                 </form>
