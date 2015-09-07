@@ -15,17 +15,7 @@
 
 <body>
 
-    <div class="main-area">
-
-        <header class="header-area"></header>
-
-        <div class="body-area">
-            <div ng-include="'/profile/profile.user-edit.html'"></div>
-        </div>
-
-        <footer class="footer-area"></footer>
-
-    </div>
+    <div class="main-area" ui-view></div>
 
     <!-- dépendances tierces -->
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
