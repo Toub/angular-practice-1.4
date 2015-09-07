@@ -1,4 +1,56 @@
-.user-edit-area{
-    font-size: 12px;
+.profile-user-edit{
     color: #456872;
 }
+
+.btn.large {
+  padding: 14px 24px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+
+.btn.large:focus,
+.btn.large:active:focus,
+.btn.large.active:focus {
+  outline: 0 none; }
+
+.btn.outline {
+  background: none;
+  padding: 12px 22px; }
+
+.btn-ok {
+  background: #0099cc;
+  color: #ffffff; }
+  .btn-ok:hover, .btn-ok:focus, .btn-ok:active, .btn-ok.active {
+    background: #33a6cc;
+    color: #555; }
+  .btn-ok.outline {
+    border: 2px solid #0099cc;
+    color: #0099cc; }
+  .btn-ok.outline:hover,
+  .btn-ok.outline:focus,
+  .btn-ok.outline:active {
+    border-color: #0099cc;
+    color: #ffffff; }
+
+.btn-cancel {
+  background: #ea5c31;
+  color: #ffffff; }
+  .btn-cancel:hover, .btn-cancel:focus, .btn-cancel:active, .btn-cancel.active {
+    background: #de542a;
+    color: #555; }
+  .btn-cancel.outline {
+    border: 2px solid #ea5c31;
+    color: #ea5c31; }
+  .btn-cancel.outline:hover,
+  .btn-cancel.outline:focus,
+  .btn-cancel.outline:active {
+    border-color: #ea5c31;
+    color: #ffffff; }
+
+form input[type="checkbox"] {
+  width: auto; }
+
+.actions-bar {
+  margin: 30px 5px; }
+

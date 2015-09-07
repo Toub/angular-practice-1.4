@@ -1,27 +1,68 @@
-<div class="container user-edit-area" ng-controller="TpaProfileUserEditController as userVm">
+<div class="container profile-user-edit" ng-controller="TpaProfileUserEditController as userVm">
+
     <div class="page">
         <div class="row">
 
             <div class="col-md-8">
                 <h1>Edit user profile</h1>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group required">
-                            <label class="control-label">First name</label>
-                            <input name="firstName" required class="form-control" type="text" ng-model="userVm.user.firstName">
+                <form name="userForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label">First name</label>
+                                <input name="firstName" class="form-control" type="text" ng-model="userVm.user.firstName">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label">Last name</label>
+                                <input name="lastName" class="form-control" type="text" ng-model="userVm.user.lastName">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label">Email</label>
+                                <input name="email" class="form-control" type="email">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group required">
-                            <label class="control-label">Last name</label>
-                            <input name="lastName" required class="form-control" type="text" ng-model="userVm.user.lastName">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label">Gender</label>
+                                <select name="gender" class="form-control">
+                                    <option value="female">Female</option>
+                                    <option value="male">Male</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label">Birthdate</label>
+                                <input name="birthdate" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group employed-form-group">
+                                <label class="control-label">Employed</label>
+                                <input class="form-control" type="checkbox">
+                            </div>
+                        </div>
+                        <div class="col-md-2" ng-if="userVm.user.employed">
+                            <div class="form-group">
+                                <label class="control-label">Salary</label>
+                                <input name="salary" class="form-control" type="number">
+                            </div>
                         </div>
                     </div>
-                </div>
-               
-                <div><input class="btn btn-primary" type="button" value="Reset" ng-click="userVm.reset()"></div>
+                    <div class="row text-center actions-bar">
+                        <div class="col-md-3">
+                            <button class="btn btn-lg btn-cancel large outline" ng-click="userVm.reset()">Reset</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-              
+
             <div class="col-md-4">
                 <h1>Profile preview</h1>
 
@@ -30,6 +71,26 @@
                         <tr>
                             <th>Name</th>
                             <td>{{ userVm.getFullName() }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>Birthdate</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>Age</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>Gender</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>Salary</th>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
