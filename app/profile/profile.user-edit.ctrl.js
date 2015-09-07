@@ -16,6 +16,7 @@
         // public methods
         vm.getFullName = getFullName;
         vm.reset = reset;
+        vm.getAgeInYears = getAgeInYears;
 
         // initialization
         init();
@@ -39,8 +40,25 @@
         function reset(){
             vm.user = {
                 firstName: 'John',
-                lastName: 'Smith'
+                lastName: 'Smith',
+                email: 'john.smith@sqli.com',
+                birthdate: moment("01/07/1980", "DD/MM/YYYY").toDate(),
+                gender: 'male',
+                employed: true,
+                salary: 10000
             };
+        }
+        
+        function getAgeInYears() {
+            if (!vm.user.birthdate) {
+                return null;
+            }
+            var years = moment(new Date()).diff(moment(vm.user.birthdate), 'years', false);
+            if (years >= 0) {
+                return years;
+            } else {
+                return null;
+            }
         }
 
     }

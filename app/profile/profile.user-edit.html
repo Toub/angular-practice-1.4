@@ -1,5 +1,9 @@
 <div class="container profile-user-edit" ng-controller="TpaProfileUserEditController as userVm">
 
+    <div>
+        <tpa-navbar active-menu="'profile'" />
+    </div>
+
     <div class="page">
         <div class="row">
 
@@ -22,7 +26,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Email</label>
-                                <input name="email" class="form-control" type="email">
+                                <input name="email" class="form-control" type="email" ng-model="userVm.user.email">
                             </div>
                         </div>
                     </div>
@@ -30,7 +34,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Gender</label>
-                                <select name="gender" class="form-control">
+                                <select name="gender" class="form-control" ng-model="userVm.user.gender">
                                     <option value="female">Female</option>
                                     <option value="male">Male</option>
                                 </select>
@@ -39,19 +43,19 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Birthdate</label>
-                                <input name="birthdate" class="form-control" type="text">
+                                <input name="birthdate" class="form-control" type="text" ng-model="userVm.user.birthdate" bs-datepicker data-date-format="yyyy-MM-dd" data-max-date="today" data-autoclose="1">
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group employed-form-group">
                                 <label class="control-label">Employed</label>
-                                <input class="form-control" type="checkbox">
+                                <input class="form-control" type="checkbox" ng-model="userVm.user.employed">
                             </div>
                         </div>
                         <div class="col-md-2" ng-if="userVm.user.employed">
                             <div class="form-group">
                                 <label class="control-label">Salary</label>
-                                <input name="salary" class="form-control" type="number">
+                                <input name="salary" class="form-control" type="number" ng-model="userVm.user.salary">
                             </div>
                         </div>
                     </div>
@@ -74,23 +78,23 @@
                         </tr>
                         <tr>
                             <th>Email</th>
-                            <td></td>
+                            <td>{{ userVm.user.email }}</td>
                         </tr>
                         <tr>
                             <th>Birthdate</th>
-                            <td></td>
+                            <td>{{ userVm.user.birthdate | date: 'yyyy-MM-dd' }}</td>
                         </tr>
                         <tr>
                             <th>Age</th>
-                            <td></td>
+                            <td>{{ userVm.getAgeInYears() }}</td>
                         </tr>
                         <tr>
                             <th>Gender</th>
-                            <td></td>
+                            <td>{{ userVm.user.gender }}</td>
                         </tr>
                         <tr>
                             <th>Salary</th>
-                            <td></td>
+                            <td>{{ userVm.user.salary | currency }}</td>
                         </tr>
                     </tbody>
                 </table>
