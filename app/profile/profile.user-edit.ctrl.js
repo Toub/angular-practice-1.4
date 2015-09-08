@@ -54,7 +54,11 @@
             if (!vm.user.birthdate) {
                 return null;
             }
-            var years = moment(new Date()).diff(moment(vm.user.birthdate), 'years', false);
+            var today = moment(new Date());
+            
+            var birthday = moment(vm.user.birthdate);
+            
+            var years = today.diff(birthday, 'years', false);
             if (years >= 0) {
                 return years;
             } else {

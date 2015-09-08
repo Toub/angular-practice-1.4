@@ -91,7 +91,16 @@
                         </tr>
                         <tr>
                             <th>Gender</th>
-                            <td>{{ userVm.user.gender }}</td>
+                            <td>
+                               <span ng-switch="userVm.user.gender">
+                                   <span ng-switch-when="male">
+                                       homme
+                                   </span>
+                                   <span ng-switch-when="female">
+                                       femme
+                                   </span>
+                               </span>
+                            </td>
                         </tr>
                         <tr>
                             <th>Salary</th>
