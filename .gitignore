@@ -1,6 +1,5 @@
 docker/cache
 node_modules
 app/bower_components
-.bowerrc
 .npmrc
 
