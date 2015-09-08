@@ -5,7 +5,8 @@ gulp.task('connect', function() {
   connect.server({
     port: 3000,
     root: 'app',
-    livereload: true
+    livereload: true,
+      fallback: './app/index.html'
   });
 });
 
