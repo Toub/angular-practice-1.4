@@ -54,8 +54,8 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Birthdate</label>
-                                <input name="birthdate" class="form-control" type="text" ng-model="userVm.user.birthdate" bs-datepicker data-date-format="yyyy-MM-dd" data-max-date="today" data-autoclose="1" ng-if="userForm.birthdate.$touched || userForm.$submitted">
-                                <div ng-messages="userForm.birthdate.$error" role="alert" class="error">
+                                <input name="birthdate" class="form-control" type="text" ng-model="userVm.user.birthdate" bs-datepicker data-date-format="yyyy-MM-dd" data-max-date="today" data-autoclose="1">
+                                <div ng-messages="userForm.birthdate.$error" role="alert" class="error" ng-if="userForm.birthdate.$touched || userForm.$submitted">
                                   <div ng-message="date">Birthdate is invalid.</div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="row text-center actions-bar">
                         <div class="col-md-3 col-md-offset-3">
-                            <a ng-click="userForm.$setSubmitted()" class="btn btn-lg btn-ok large outline">
+                            <a ng-click="userForm.$setSubmitted();userVm.submit()" class="btn btn-lg btn-ok large outline">
                                 <i class="glyphicon glyphicon-check"></i> Save
                             </a>
                         </div>

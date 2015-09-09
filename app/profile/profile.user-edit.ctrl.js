@@ -5,7 +5,7 @@
         .module('tpAngular.profile')
         .controller('TpaProfileUserEditController', TpaProfileUserEditController);
 
-    function TpaProfileUserEditController($scope, $log) {
+    function TpaProfileUserEditController($scope, $log, $state) {
 
         // view model
         var vm = this;
@@ -18,6 +18,7 @@
         vm.reset = reset;
         vm.getAgeInYears = getAgeInYears;
         vm.employedUpdated = employedUpdated;
+        vm.submit = submit;
 
         // initialization
         init();
@@ -36,6 +37,10 @@
 
         function getFullName() {
             return vm.user.firstName + ' ' + vm.user.lastName;
+        }
+        
+        function submit(){
+            $state.go('edit-password');
         }
         
         function reset(){
