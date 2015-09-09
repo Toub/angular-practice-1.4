@@ -14,12 +14,14 @@
             .state('edit-user', {
                 url: "/profile/user/edit",
                 templateUrl: 'profile/profile.user-edit.html',
-                controller: 'TpaProfileUserEditController'
+                controller: 'TpaProfileUserEditController',
+                controllerAs: 'userVm'
             })
             .state('edit-password', {
                 url: "/profile/password/edit",
                 templateUrl: 'profile/profile.password-edit.html',
-                controller: 'TpaProfilePasswordEditController as passwordVm'
+                controller: 'TpaProfilePasswordEditController',
+                controllerAs: 'passwordVm'
             });
 
         // default route
