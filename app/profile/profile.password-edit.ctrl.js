@@ -6,10 +6,11 @@
         .controller('TpaProfilePasswordEditController', TpaProfilePasswordEditController);
 
     /** @ngInject */
-    function TpaProfilePasswordEditController($scope) {
+    function TpaProfilePasswordEditController($stateParams) {
 
         // view model
         var vm = this;
+        vm.firstName = $stateParams.firstName ? $stateParams.firstName : 'John';
 
         // public attributes
 

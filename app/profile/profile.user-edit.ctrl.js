@@ -5,7 +5,7 @@
         .module('tpAngular.profile')
         .controller('TpaProfileUserEditController', TpaProfileUserEditController);
 
-    function TpaProfileUserEditController($scope, $log, $state) {
+    function TpaProfileUserEditController($scope, $log, $state, $stateParams) {
 
         // view model
         var vm = this;
@@ -39,14 +39,18 @@
             return vm.user.firstName + ' ' + vm.user.lastName;
         }
         
-        function submit(){
-            $state.go('edit-password');
+        function submit(userForm){
+            userForm.$setSubmitted();
+            
+            if (userForm.$valid){
+                $state.go('edit-password', {firstName: vm.user.firstName});
+            }
         }
         
         function reset(){
             
             vm.user = {
-                firstName: 'John',
+                firstName: $stateParams.firstName ? $stateParams.firstName : 'John',
                 lastName: null,
                 email: 'john.smith@sqli.com',
                 birthdate: moment("01/07/1980", "DD/MM/YYYY").toDate(),

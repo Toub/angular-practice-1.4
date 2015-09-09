@@ -12,20 +12,20 @@
         // states configuration
         $stateProvider
             .state('edit-user', {
-                url: "/profile/user/edit",
+                url: "/profile/user/edit/:firstName",
                 templateUrl: 'profile/profile.user-edit.html',
                 controller: 'TpaProfileUserEditController',
                 controllerAs: 'userVm'
             })
             .state('edit-password', {
-                url: "/profile/password/edit",
+                url: "/profile/password/edit/:firstName",
                 templateUrl: 'profile/profile.password-edit.html',
                 controller: 'TpaProfilePasswordEditController',
                 controllerAs: 'passwordVm'
             });
 
         // default route
-        $urlRouterProvider.otherwise('/profile/user/edit');
+        $urlRouterProvider.otherwise('/profile/user/edit/');
         
     });
 

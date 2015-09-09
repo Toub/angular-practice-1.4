@@ -1,6 +1,14 @@
 <div class="container profile-user-edit">
 
-    <a ui-sref="edit-password">Edit password</a>
+    <div>
+        <a ui-sref="edit-password({firstName: userVm.firstName})">Edit password</a>
+    </div>
+    <div>
+        <a ui-sref="edit-user({firstName: 'Mehdi'})">Edit Mehdi's user profile</a>
+    </div>
+    <div>
+        <a ui-sref="edit-user({firstName: 'Anne'})">Edit Anne's user profile</a>
+    </div>
 
     <div class="page">
         <div class="row">
@@ -15,8 +23,8 @@
                                 <input name="firstName" required minlength="2" class="form-control" type="text" ng-model="userVm.user.firstName">
                                 <!-- using attribute directives -->
                                 <div ng-messages="userForm.firstName.$error" role="alert" class="error" ng-if="userForm.firstName.$touched || userForm.$submitted">
-                                  <div ng-message="required">First name is required.</div>
-                                  <div ng-message="minlength">First name should contains at least 2 characters.</div>
+                                    <div ng-message="required">First name is required.</div>
+                                    <div ng-message="minlength">First name should contains at least 2 characters.</div>
                                 </div>
                             </div>
                         </div>
@@ -25,8 +33,8 @@
                                 <label class="control-label">Last name</label>
                                 <input name="lastName" required minlength="3" class="form-control" type="text" ng-model="userVm.user.lastName">
                                 <div ng-messages="userForm.lastName.$error" role="alert" class="error" ng-if="userForm.lastName.$touched || userForm.$submitted">
-                                  <div ng-message="required">Last name is required.</div>
-                                  <div ng-message="minlength">Last name should contains at least 3 characters.</div>
+                                    <div ng-message="required">Last name is required.</div>
+                                    <div ng-message="minlength">Last name should contains at least 3 characters.</div>
                                 </div>
                             </div>
                         </div>
@@ -35,8 +43,8 @@
                                 <label class="control-label">Email</label>
                                 <input name="email" required class="form-control" type="email" ng-model="userVm.user.email">
                                 <div ng-messages="userForm.email.$error" role="alert" class="error" ng-if="userForm.lastemailName.$touched || userForm.$submitted">
-                                  <div ng-message="required">Email is required.</div>
-                                  <div ng-message="email">Email is invalid.</div>
+                                    <div ng-message="required">Email is required.</div>
+                                    <div ng-message="email">Email is invalid.</div>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +64,7 @@
                                 <label class="control-label">Birthdate</label>
                                 <input name="birthdate" class="form-control" type="text" ng-model="userVm.user.birthdate" bs-datepicker data-date-format="yyyy-MM-dd" data-max-date="today" data-autoclose="1">
                                 <div ng-messages="userForm.birthdate.$error" role="alert" class="error" ng-if="userForm.birthdate.$touched || userForm.$submitted">
-                                  <div ng-message="date">Birthdate is invalid.</div>
+                                    <div ng-message="date">Birthdate is invalid.</div>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +83,7 @@
                     </div>
                     <div class="row text-center actions-bar">
                         <div class="col-md-3 col-md-offset-3">
-                            <a ng-click="userForm.$setSubmitted();userVm.submit()" class="btn btn-lg btn-ok large outline">
+                            <a ng-click="userVm.submit(userForm)" class="btn btn-lg btn-ok large outline">
                                 <i class="glyphicon glyphicon-check"></i> Save
                             </a>
                         </div>
